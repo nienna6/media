@@ -1,0 +1,5 @@
+#EXTM3U x-tvg-url=""
+
+#EXTINF:-1 tvg-id="teleestrella" tvg-name="TeleEstrella" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png" tvg-type="live" group-title="Bolivia",TeleEstrella
+https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8
+
