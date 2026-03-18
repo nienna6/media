@@ -6,6 +6,22 @@ const port = process.env.PORT || 3000;
 const USERNAME = 'nienna';
 const PASSWORD = 'banana';
 
+// Base de datos de TV en vivo
+const liveStreams = [
+  {
+    stream_id: 1001,
+    name: "Canal de Prueba (Demo)",
+    stream_icon: "https://via.placeholder.com/150",
+    epg_channel_id: "canalprueba",
+    added: "1699564800",
+    category_id: "1",
+    custom_sid: "",
+    tv_archive: 0,
+    direct_source: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    tv_archive_duration: 0
+  }
+];
+
 // Base de datos de películas
 const movies = [
   {
@@ -32,7 +48,7 @@ const movies = [
     rating: "7.9",
     rating_5based: 3.75,
     added: "1699564800",
-    category_id: "1",
+    category_id: "3",
     container_extension: "mkv",
     custom_sid: "",
     direct_source: "https://cdnvideo.davidmonrroy7.workers.dev/video/https%3A%2F%2Farchive.org%2Fdownload%2Fdercro-2040%2FDERCRO2040.mkv"
@@ -72,8 +88,8 @@ const series = [
     backdrop_path: ["https://d32qys9a6wm9no.cloudfront.net/images/tvs/backdrop/f2/0eb528b823acf5fcb65664b432ea07db_1280x720.jpg?t=1760041925"],
     youtube_trailer: "",
     episode_run_time: "45",
-    category_id: "1",
-    category_ids: [1],  // Añadido
+    category_id: "2",
+    category_ids: [2],  // Añadido
     num: 1
   },
   {
@@ -257,20 +273,26 @@ const movieInfo = {
   }
 };
 
+const liveCategories = [
+  { category_id: "1", category_name: "TV en Vivo (General)", parent_id: 0 },
+  { category_id: "2", category_name: "Bolivia", parent_id: 0 },
+  { category_id: "3", category_name: "Argentina", parent_id: 0 },
+  { category_id: "4", category_name: "Entretenimiento", parent_id: 0 }
+];
+
 const categories = [
-  {
-    category_id: "1",
-    category_name: "Películas",
-    parent_id: 0
-  }
+  { category_id: "1", category_name: "Películas (General)", parent_id: 0 },
+  { category_id: "2", category_name: "Acción", parent_id: 0 },
+  { category_id: "3", category_name: "Comedia", parent_id: 0 },
+  { category_id: "4", category_name: "Terror", parent_id: 0 },
+  { category_id: "5", category_name: "Ciencia Ficción", parent_id: 0 }
 ];
 
 const seriesCategories = [
-  {
-    category_id: "1",
-    category_name: "Series",
-    parent_id: 0
-  }
+  { category_id: "1", category_name: "Series (General)", parent_id: 0 },
+  { category_id: "2", category_name: "Drama", parent_id: 0 },
+  { category_id: "3", category_name: "Documentales", parent_id: 0 },
+  { category_id: "4", category_name: "Animación", parent_id: 0 }
 ];
 
 // Middleware
@@ -296,6 +318,14 @@ app.get('/get.php', (req, res) => {
   
   const baseUrl = `${req.protocol}://${req.get('host')}`;
   let m3uContent = '#EXTM3U x-tvg-url=""\n\n';
+
+  // Si se solicita solo TV en vivo o todo el contenido
+  if (!type || type === 'live') {
+    liveStreams.forEach(stream => {
+      m3uContent += `#EXTINF:-1 tvg-id="${stream.epg_channel_id}" tvg-name="${stream.name}" tvg-logo="${stream.stream_icon}" tvg-type="live" group-title="📺 TV en Vivo",${stream.name}\n`;
+      m3uContent += `${baseUrl}/live/${username}/${password}/${stream.stream_id}.m3u8\n\n`;
+    });
+  }
   
   // Si se solicita solo series o todo el contenido
   if (!type || type === 'series') {
@@ -378,11 +408,11 @@ app.get('/player_api.php', authenticate, (req, res) => {
       break;
     
     case 'get_live_streams':
-      res.json([]);
+      res.json(liveStreams);
       break;
     
     case 'get_live_categories':
-      res.json([]);
+      res.json(liveCategories);
       break;
     
     default:
@@ -412,6 +442,22 @@ app.get('/player_api.php', authenticate, (req, res) => {
           time_now: new Date().toISOString()
         }
       });
+  }
+});
+
+// Endpoint para streaming de TV en vivo
+app.get('/live/:username/:password/:streamId.:ext', (req, res) => {
+  const { username, password, streamId } = req.params;
+  
+  if (username !== USERNAME || password !== PASSWORD) {
+    return res.status(401).send('Unauthorized');
+  }
+  
+  const stream = liveStreams.find(s => s.stream_id == streamId);
+  if (stream && stream.direct_source) {
+    res.redirect(stream.direct_source);
+  } else {
+    res.status(404).send('Stream not found');
   }
 });
 
@@ -463,7 +509,7 @@ app.get('/series/:username/:password/:episodeId.:ext', (req, res) => {
 
 // Ruta de inicio
 app.get('/', (req, res) => {
-  res.send('Xtream API Server - Running (Movies + Series)');
+  res.send('Xtream API Server - Running (Live + Movies + Series)');
 });
 
 app.listen(port, () => {
