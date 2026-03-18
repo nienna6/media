@@ -4,8 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Configuración de usuario
-const USERNAME = 'usuario';
-const PASSWORD = 'password123';
+const USERNAME = 'nienna';
+const PASSWORD = 'banana2026';
 
 // --- BASES DE DATOS ---
 
