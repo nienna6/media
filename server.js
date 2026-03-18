@@ -9,6 +9,18 @@ const PASSWORD = 'banana';
 // Base de datos de TV en vivo
 const liveStreams = [
   {
+    stream_id: 1773824767158,
+    name: "TeleEstrella",
+    stream_icon: "https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png",
+    epg_channel_id: "teleestrella",
+    added: "1773824767",
+    category_id: "5",
+    custom_sid: "",
+    tv_archive: 0,
+    direct_source: "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8",
+    tv_archive_duration: 0
+  },
+  {
     stream_id: 1001,
     name: "Canal de Prueba (Demo)",
     stream_icon: "https://via.placeholder.com/150",
