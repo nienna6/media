@@ -6,7 +6,7 @@ https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8
 #EXTINF:-1 tvg-id="canalprueba" tvg-name="Canal de Prueba (Demo)" tvg-logo="https://via.placeholder.com/150" group-title="TV en Vivo (General)",Canal de Prueba (Demo)
 https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
 
-#EXTINF:-1 tvg-id="1773822975155" tvg-name="Atraccion Peculiar (1988)" tvg-logo="https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg" group-title="Películas (General)",Atraccion Peculiar (1988)
+#EXTINF:-1 tvg-id="1773822975155" tvg-name="Atraccion Peculiar (1988)" tvg-logo="https://res.cloudinary.com/dzndglyjr/image/upload/v1760206690/cinenacional/posters/167/poster.jpg" group-title="Películas (General)",Atraccion Peculiar (1988)
 https://archive.org/download/atraccion-peculiar-1988/Atraccion%20peculiar%20%281988%29.mp4
 
 #EXTINF:-1 tvg-id="1" tvg-name="Shrek (2001)" tvg-logo="https://play-lh.googleusercontent.com/CZ5cPYN4XZtevhmkHkk5NJYdzZWRvDx6RMJ_j6_yv2uDuVk3z_AnXEmwu3t78il5QoOQ=w240-h480-rw" group-title="Comedia",Shrek (2001)
