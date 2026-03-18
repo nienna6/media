@@ -277,7 +277,8 @@ const liveCategories = [
   { category_id: "1", category_name: "TV en Vivo (General)", parent_id: 0 },
   { category_id: "2", category_name: "Deportes", parent_id: 0 },
   { category_id: "3", category_name: "Noticias", parent_id: 0 },
-  { category_id: "4", category_name: "Entretenimiento", parent_id: 0 }
+  { category_id: "4", category_name: "Entretenimiento", parent_id: 0 },
+  { category_id: "5", category_name: "Bolivia", parent_id: 0 }
 ];
 
 const categories = [
