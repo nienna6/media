@@ -286,7 +286,8 @@ const categories = [
   { category_id: "2", category_name: "Acción", parent_id: 0 },
   { category_id: "3", category_name: "Comedia", parent_id: 0 },
   { category_id: "4", category_name: "Terror", parent_id: 0 },
-  { category_id: "5", category_name: "Ciencia Ficción", parent_id: 0 }
+  { category_id: "5", category_name: "Ciencia Ficción", parent_id: 0 },
+  { category_id: "6", category_name: "Bolivianas", parent_id: 0 }
 ];
 
 const seriesCategories = [
