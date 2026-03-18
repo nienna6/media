@@ -56,7 +56,7 @@ const movies = [
     "name": "Shrek (2001)",
     "title": "Shrek (2001)",
     "stream_type": "movie",
-    "stream_icon": "https://static.wikia.nocookie.net/doblaje/images/6/69/Shrekban.png/revision/latest?cb=20200731225428&path-prefix=es",
+    "stream_icon": "https://play-lh.googleusercontent.com/CZ5cPYN4XZtevhmkHkk5NJYdzZWRvDx6RMJ_j6_yv2uDuVk3z_AnXEmwu3t78il5QoOQ=w240-h480-rw",
     "rating": "7.9",
     "rating_5based": 3.75,
     "added": "1699564800",
