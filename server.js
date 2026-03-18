@@ -299,7 +299,8 @@ const seriesCategories = [
   { category_id: "1", category_name: "Series (General)", parent_id: 0 },
   { category_id: "2", category_name: "Drama", parent_id: 0 },
   { category_id: "3", category_name: "Documentales", parent_id: 0 },
-  { category_id: "4", category_name: "Animación", parent_id: 0 }
+  { category_id: "4", category_name: "Animación", parent_id: 0 },
+  { category_id: "5", category_name: "Comedia", parent_id: 0 }
 ];
 
 // Middleware
