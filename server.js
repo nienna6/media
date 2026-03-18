@@ -275,8 +275,8 @@ const movieInfo = {
 
 const liveCategories = [
   { category_id: "1", category_name: "TV en Vivo (General)", parent_id: 0 },
-  { category_id: "2", category_name: "Bolivia", parent_id: 0 },
-  { category_id: "3", category_name: "Argentina", parent_id: 0 },
+  { category_id: "2", category_name: "Deportes", parent_id: 0 },
+  { category_id: "3", category_name: "Noticias", parent_id: 0 },
   { category_id: "4", category_name: "Entretenimiento", parent_id: 0 }
 ];
 
@@ -425,103 +425,4 @@ app.get('/player_api.php', authenticate, (req, res) => {
           auth: 1,
           status: "Active",
           exp_date: "2099999999",
-          is_trial: "0",
-          active_cons: "0",
-          created_at: "1699564800",
-          max_connections: "5",
-          allowed_output_formats: ["m3u8", "ts", "rtmp"]
-        },
-        server_info: {
-          url: req.protocol + '://' + req.get('host'),
-          port: port,
-          https_port: "",
-          server_protocol: "http",
-          rtmp_port: "",
-          timezone: "UTC",
-          timestamp_now: Math.floor(Date.now() / 1000),
-          time_now: new Date().toISOString()
-        }
-      });
-  }
-});
-
-// Endpoint para streaming de TV en vivo
-app.get('/live/:username/:password/:streamId.:ext', (req, res) => {
-  const { username, password, streamId } = req.params;
-  
-  if (username !== USERNAME || password !== PASSWORD) {
-    return res.status(401).send('Unauthorized');
-  }
-  
-  const stream = liveStreams.find(s => s.stream_id == streamId);
-  if (stream && stream.direct_source) {
-    res.redirect(stream.direct_source);
-  } else {
-    res.status(404).send('Stream not found');
-  }
-});
-
-// Endpoint para streaming de películas (redirige a Archive.org)
-app.get('/movie/:username/:password/:streamId.:ext', (req, res) => {
-  const { username, password, streamId } = req.params;
-  
-  if (username !== USERNAME || password !== PASSWORD) {
-    return res.status(401).send('Unauthorized');
-  }
-  
-  const movie = movies.find(m => m.stream_id == streamId);
-  if (movie && movie.direct_source) {
-    res.redirect(movie.direct_source);
-  } else {
-    res.status(404).send('Movie not found');
-  }
-});
-
-// Endpoint para streaming de series (redirige a Archive.org)
-app.get('/series/:username/:password/:episodeId.:ext', (req, res) => {
-  const { username, password, episodeId } = req.params;
-  
-  if (username !== USERNAME || password !== PASSWORD) {
-    return res.status(401).send('Unauthorized');
-  }
-  
-  // Buscar el episodio en todas las series
-  let foundEpisode = null;
-  
-  for (const seriesId in seriesEpisodes) {
-    const serieData = seriesEpisodes[seriesId];
-    for (const seasonNum in serieData.episodes) {
-      const episode = serieData.episodes[seasonNum].find(ep => ep.id === episodeId);
-      if (episode) {
-        foundEpisode = episode;
-        break;
-      }
-    }
-    if (foundEpisode) break;
-  }
-  
-  if (foundEpisode && foundEpisode.direct_source) {
-    res.redirect(foundEpisode.direct_source);
-  } else {
-    res.status(404).send('Episode not found');
-  }
-});
-
-// Ruta de inicio
-app.get('/', (req, res) => {
-  res.send('Xtream API Server - Running (Live + Movies + Series)');
-});
-
-app.listen(port, () => {
-  console.log(`Xtream API running on port ${port}`);
-  console.log(`URL de conexión: http://localhost:${port}`);
-  console.log(`Usuario: ${USERNAME}`);
-  console.log(`Contraseña: ${PASSWORD}`);
-});
-
-const path = require('path');
-
-// Servir el portal de administración
-app.get('/portal', (req, res) => {
-  res.sendFile(path.join(__dirname, 'portal.html'));
-});
+          is_trial:
