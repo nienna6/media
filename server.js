@@ -9,6 +9,20 @@ const PASSWORD = 'password123';
 // Base de datos de películas
 const movies = [
   {
+    stream_id: 1773819317429,
+    num: 0,
+    name: "Atraccion Peculiar (1988)",
+    title: "Atraccion Peculiar (1988)",
+    stream_type: "movie",
+    stream_icon: "https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg",
+    rating: "5.0",
+    rating_5based: 2.50,
+    added: "1773819317",
+    category_id: "1",
+    container_extension: "mp4",
+    direct_source: "https://archive.org/download/atraccion-peculiar-1988/Atraccion%20peculiar%20%281988%29.mp4"
+  },
+  {
     stream_id: 1,
     num: 1,
     name: "Shrek (2001)",
