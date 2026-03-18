@@ -316,15 +316,48 @@ function authenticate(req, res, next) {
 }
 
 // Endpoint M3U para TiviMate
+// Endpoint M3U para TiviMate / IPTV Apps
 app.get('/get.php', (req, res) => {
   const { username, password, type } = req.query;
   
   if (username !== USERNAME || password !== PASSWORD) {
-    return res.status(401).send('#EXTM3U\n#EXTINF:-1,Error: Invalid credentials\nhttp://invalid');
+    return res.status(401).send('#EXTM3U\n#EXTINF:-1,Error: Credenciales Invalidas\nhttp://invalid');
   }
   
   const baseUrl = `${req.protocol}://${req.get('host')}`;
   let m3uContent = '#EXTM3U x-tvg-url=""\n\n';
+  
+  // LOGICA CORREGIDA: Si no hay tipo, o es m3u_plus, o es series, mostrar series
+  const showSeries = !type || type === 'm3u_plus' || type === 'series';
+  // Si no hay tipo, o es m3u_plus, o es movie, mostrar peliculas
+  const showMovies = !type || type === 'm3u_plus' || type === 'movie';
+
+  if (showSeries) {
+    series.forEach(serie => {
+      const serieData = seriesEpisodes[serie.series_id];
+      if (serieData && serieData.episodes) {
+        Object.keys(serieData.episodes).forEach(seasonNum => {
+          const episodes = serieData.episodes[seasonNum];
+          episodes.forEach(episode => {
+            const episodeName = `${serie.name} S${String(seasonNum).padStart(2, '0')}E${String(episode.episode_num).padStart(2, '0')} ${episode.title}`;
+            m3uContent += `#EXTINF:-1 tvg-id="serie_${serie.series_id}_${seasonNum}_${episode.episode_num}" tvg-name="${episodeName}" tvg-logo="${serie.cover}" tvg-type="series" group-title="📺 ${serie.name}",${episodeName}\n`;
+            m3uContent += `${baseUrl}/series/${username}/${password}/${episode.id}.${episode.container_extension}\n\n`;
+          });
+        });
+      }
+    });
+  }
+  
+  if (showMovies) {
+    movies.forEach(movie => {
+      m3uContent += `#EXTINF:-1 tvg-id="${movie.stream_id}" tvg-name="${movie.name}" tvg-logo="${movie.stream_icon}" tvg-type="movie" group-title="🎬 Películas",${movie.name}\n`;
+      m3uContent += `${baseUrl}/movie/${username}/${password}/${movie.stream_id}.${movie.container_extension}\n\n`;
+    });
+  }
+  
+  res.setHeader('Content-Type', 'audio/x-mpegurl; charset=utf-8');
+  res.send(m3uContent);
+});
 
   // Si se solicita solo TV en vivo o todo el contenido
   if (!type || type === 'live') {
