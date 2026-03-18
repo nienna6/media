@@ -9,233 +9,226 @@ const PASSWORD = 'banana';
 // Base de datos de TV en vivo
 const liveStreams = [
   {
-    stream_id: 1773824767158,
-    name: "TeleEstrella",
-    stream_icon: "https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png",
-    epg_channel_id: "teleestrella",
-    added: "1773824767",
-    category_id: "5",
-    custom_sid: "",
-    tv_archive: 0,
-    direct_source: "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8",
-    tv_archive_duration: 0
+    "stream_id": 1773824767158,
+    "name": "TeleEstrella",
+    "stream_icon": "https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png",
+    "epg_channel_id": "teleestrella",
+    "added": "1773824767",
+    "category_id": "5",
+    "custom_sid": "",
+    "tv_archive": 0,
+    "direct_source": "https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8",
+    "tv_archive_duration": 0
   },
   {
-    stream_id: 1001,
-    name: "Canal de Prueba (Demo)",
-    stream_icon: "https://via.placeholder.com/150",
-    epg_channel_id: "canalprueba",
-    added: "1699564800",
-    category_id: "1",
-    custom_sid: "",
-    tv_archive: 0,
-    direct_source: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-    tv_archive_duration: 0
+    "stream_id": 1001,
+    "name": "Canal de Prueba (Demo)",
+    "stream_icon": "https://via.placeholder.com/150",
+    "epg_channel_id": "canalprueba",
+    "added": "1699564800",
+    "category_id": "1",
+    "custom_sid": "",
+    "tv_archive": 0,
+    "direct_source": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+    "tv_archive_duration": 0
   }
 ];
 
 // Base de datos de películas
 const movies = [
   {
-    stream_id: 1773822975155,
-    num: 0,
-    name: "Atraccion Peculiar (1988)",
-    title: "Atraccion Peculiar (1988)",
-    stream_type: "movie",
-    stream_icon: "https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg",
-    rating: "5.0",
-    rating_5based: 2.50,
-    added: "1773822975",
-    category_id: "1",
-    container_extension: "mp4",
-    direct_source: "https://archive.org/download/atraccion-peculiar-1988/Atraccion%20peculiar%20%281988%29.mp4"
+    "stream_id": 1773822975155,
+    "num": 0,
+    "name": "Atraccion Peculiar (1988)",
+    "title": "Atraccion Peculiar (1988)",
+    "stream_type": "movie",
+    "stream_icon": "https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg",
+    "rating": "5.0",
+    "rating_5based": 2.5,
+    "added": "1773822975",
+    "category_id": "1",
+    "container_extension": "mp4",
+    "direct_source": "https://archive.org/download/atraccion-peculiar-1988/Atraccion%20peculiar%20%281988%29.mp4"
   },
   {
-    stream_id: 1,
-    num: 1,
-    name: "Shrek (2001)",
-    title: "Shrek (2001)",
-    stream_type: "movie",
-    stream_icon: "https://static.wikia.nocookie.net/doblaje/images/6/69/Shrekban.png/revision/latest?cb=20200731225428&path-prefix=es",
-    rating: "7.9",
-    rating_5based: 3.75,
-    added: "1699564800",
-    category_id: "3",
-    container_extension: "mkv",
-    custom_sid: "",
-    direct_source: "https://cdnvideo.davidmonrroy7.workers.dev/video/https%3A%2F%2Farchive.org%2Fdownload%2Fdercro-2040%2FDERCRO2040.mkv"
-  },
-  {
-    stream_id: 2,
-    num: 2,
-    name: "Película Ejemplo 2",
-    title: "Película Ejemplo 2",
-    stream_type: "movie",
-    stream_icon: "https://image.tmdb.org/t/p/w500/ejemplo2.jpg",
-    rating: "8.2",
-    rating_5based: 4.1,
-    added: "1699651200",
-    category_id: "1",
-    container_extension: "mp4",
-    custom_sid: "",
-    direct_source: "https://archive.org/download/tu-id/pelicula2.mp4"
+    "stream_id": 1,
+    "num": 1,
+    "name": "Shrek (2001)",
+    "title": "Shrek (2001)",
+    "stream_type": "movie",
+    "stream_icon": "https://static.wikia.nocookie.net/doblaje/images/6/69/Shrekban.png/revision/latest?cb=20200731225428&path-prefix=es",
+    "rating": "7.9",
+    "rating_5based": 3.75,
+    "added": "1699564800",
+    "category_id": "3",
+    "container_extension": "mkv",
+    "custom_sid": "",
+    "direct_source": "https://cdnvideo.davidmonrroy7.workers.dev/video/https%3A%2F%2Farchive.org%2Fdownload%2Fdercro-2040%2FDERCRO2040.mkv"
   }
 ];
 
 // Base de datos de series - FORMATO CORRECTO PARA XTREAM
 const series = [
   {
-    series_id: 1,
-    name: "Pluribus",
-    title: "Pluribus",
-    cover: "https://i.imgur.com/tVdzIkh.jpeg",
-    plot: "La serie está ambientada en Albuquerque, ​siguiendo a la autora Carol Sturka, quien parece ser la única persona inmune a un virus inexplicable que transforma a la población mundial en ciudadanos contentos y optimistas.",
-    cast: "	Rhea Seehorn",
-    director: "	Vince Gilligan",
-    genre: "Drama, Ciencia ficción",
-    releaseDate: "2025-11-07",
-    last_modified: "1699564800",
-    rating: "9.0",
-    rating_5based: 4.25,
-    backdrop_path: ["https://d32qys9a6wm9no.cloudfront.net/images/tvs/backdrop/f2/0eb528b823acf5fcb65664b432ea07db_1280x720.jpg?t=1760041925"],
-    youtube_trailer: "",
-    episode_run_time: "45",
-    category_id: "2",
-    category_ids: [2],  // Añadido
-    num: 1
+    "series_id": 1,
+    "name": "Pluribus",
+    "title": "Pluribus",
+    "cover": "https://i.imgur.com/tVdzIkh.jpeg",
+    "plot": "La serie está ambientada en Albuquerque, ​siguiendo a la autora Carol Sturka, quien parece ser la única persona inmune a un virus inexplicable que transforma a la población mundial en ciudadanos contentos y optimistas.",
+    "cast": "\tRhea Seehorn",
+    "director": "\tVince Gilligan",
+    "genre": "Drama, Ciencia ficción",
+    "releaseDate": "2025-11-07",
+    "last_modified": "1699564800",
+    "rating": "9.0",
+    "rating_5based": 4.25,
+    "backdrop_path": [
+      "https://d32qys9a6wm9no.cloudfront.net/images/tvs/backdrop/f2/0eb528b823acf5fcb65664b432ea07db_1280x720.jpg?t=1760041925"
+    ],
+    "youtube_trailer": "",
+    "episode_run_time": "45",
+    "category_id": "2",
+    "category_ids": [
+      2
+    ],
+    "num": 1
   },
   {
-    series_id: 2,
-    name: "Chespirito: Sin Querer Queriendo",
-    title: "Chespirito: Sin Querer Queriendo",
-    cover: "https://image.tmdb.org/t/p/w500/serie2.jpg",
-    plot: "Una comedia familiar divertida",
-    cast: "Actor D, Actor E",
-    director: "Director Y",
-    genre: "Comedia",
-    releaseDate: "2022-05-15",
-    last_modified: "1699564800",
-    rating: "7.8",
-    rating_5based: 3.9,
-    backdrop_path: ["https://image.tmdb.org/t/p/original/backdrop2.jpg"],
-    youtube_trailer: "",
-    episode_run_time: "30",
-    category_id: "1",
-    category_ids: [1],  // Añadido
-    num: 2
+    "series_id": 2,
+    "name": "Chespirito: Sin Querer Queriendo",
+    "title": "Chespirito: Sin Querer Queriendo",
+    "cover": "https://image.tmdb.org/t/p/w500/serie2.jpg",
+    "plot": "Una comedia familiar divertida",
+    "cast": "Actor D, Actor E",
+    "director": "Director Y",
+    "genre": "Comedia",
+    "releaseDate": "2022-05-15",
+    "last_modified": "1699564800",
+    "rating": "7.8",
+    "rating_5based": 3.9,
+    "backdrop_path": [
+      "https://image.tmdb.org/t/p/original/backdrop2.jpg"
+    ],
+    "youtube_trailer": "",
+    "episode_run_time": "30",
+    "category_id": "1",
+    "category_ids": [
+      1
+    ],
+    "num": 2
   }
 ];
 
 // Episodios de las series
 const seriesEpisodes = {
-  1: {
-    seasons: [
+  "1": {
+    "seasons": [
       {
-        season_number: 1,
-        name: "Temporada 1",
-        episode_count: 3,
-        cover: "https://image.tmdb.org/t/p/w500/season1.jpg",
-        cover_big: "https://image.tmdb.org/t/p/original/season1.jpg",
-        air_date: "2023-01-01"
+        "season_number": 1,
+        "name": "Temporada 1",
+        "episode_count": 3,
+        "cover": "https://image.tmdb.org/t/p/w500/season1.jpg",
+        "cover_big": "https://image.tmdb.org/t/p/original/season1.jpg",
+        "air_date": "2023-01-01"
       },
       {
-        season_number: 2,
-        name: "Temporada 2",
-        episode_count: 2,
-        cover: "https://image.tmdb.org/t/p/w500/season2.jpg",
-        cover_big: "https://image.tmdb.org/t/p/original/season2.jpg",
-        air_date: "2023-06-01"
+        "season_number": 2,
+        "name": "Temporada 2",
+        "episode_count": 2,
+        "cover": "https://image.tmdb.org/t/p/w500/season2.jpg",
+        "cover_big": "https://image.tmdb.org/t/p/original/season2.jpg",
+        "air_date": "2023-06-01"
       }
     ],
-    episodes: {
-      1: [
+    "episodes": {
+      "1": [
         {
-          id: "101",
-          episode_num: 1,
-          title: "Episodio 1 - Somos nosotros",
-          container_extension: "mp4",
-          info: {
-            name: "Episodio 1 - Somos nosotros",
-            season: 1,
-            episode_num: 1,
-            air_date: "2025-11-07",
-            plot: "El descubrimiento de un astrónomo pone al mundo de cabeza. Carol Sturka, una novelista malhumorada, se enfrenta a este nuevo y extraño mundo.",
-            duration_secs: "2700",
-            duration: "58:00",
-            rating: "9.3",
-            cover_big: "https://is1-ssl.mzstatic.com/image/thumb/ntLNBvnQxDUKa70T9THm8Q/580x386KF.TVALC02.webp?color=000000&style=m"
+          "id": "101",
+          "episode_num": 1,
+          "title": "Episodio 1 - Somos nosotros",
+          "container_extension": "mp4",
+          "info": {
+            "name": "Episodio 1 - Somos nosotros",
+            "season": 1,
+            "episode_num": 1,
+            "air_date": "2025-11-07",
+            "plot": "El descubrimiento de un astrónomo pone al mundo de cabeza. Carol Sturka, una novelista malhumorada, se enfrenta a este nuevo y extraño mundo.",
+            "duration_secs": "2700",
+            "duration": "58:00",
+            "rating": "9.3",
+            "cover_big": "https://is1-ssl.mzstatic.com/image/thumb/ntLNBvnQxDUKa70T9THm8Q/580x386KF.TVALC02.webp?color=000000&style=m"
           },
-          direct_source: "https://def4.pcloud.com/cBZgWsb877ZpWSrVM7ZZZk5lm0kZ2ZZsVLZkZLdx9iVZo8ZiYZ8QZF7Z4mZ9QZSLZNQZHLZe8ZT4Z04ZlRZbYZR6bM5ZvKBGnb50zlXyCnvQAhBS4Rmhqws7/Pluribus_S01E01_We%20Is%20Us.mp4"
+          "direct_source": "https://def4.pcloud.com/cBZgWsb877ZpWSrVM7ZZZk5lm0kZ2ZZsVLZkZLdx9iVZo8ZiYZ8QZF7Z4mZ9QZSLZNQZHLZe8ZT4Z04ZlRZbYZR6bM5ZvKBGnb50zlXyCnvQAhBS4Rmhqws7/Pluribus_S01E01_We%20Is%20Us.mp4"
         },
         {
-          id: "102",
-          episode_num: 2,
-          title: "Episodio 2 - Chica Pirata",
-          container_extension: "mp4",
-          info: {
-            name: "Episodio 2 - Chica Pirata",
-            season: 1,
-            episode_num: 2,
-            air_date: "2025-11-07",
-            plot: "Un rostro sospechosamente familiar le muestra la nueva y bizarra normalidad a Carol. Una junta en Europa reúne a desconocidos y provoca fricciones.",
-            duration_secs: "2700",
-            duration: "63:00",
-            rating: "9.5",
-            cover_big: "https://image.tmdb.org/t/p/original/ep2.jpg"
+          "id": "102",
+          "episode_num": 2,
+          "title": "Episodio 2 - Chica Pirata",
+          "container_extension": "mp4",
+          "info": {
+            "name": "Episodio 2 - Chica Pirata",
+            "season": 1,
+            "episode_num": 2,
+            "air_date": "2025-11-07",
+            "plot": "Un rostro sospechosamente familiar le muestra la nueva y bizarra normalidad a Carol. Una junta en Europa reúne a desconocidos y provoca fricciones.",
+            "duration_secs": "2700",
+            "duration": "63:00",
+            "rating": "9.5",
+            "cover_big": "https://image.tmdb.org/t/p/original/ep2.jpg"
           },
-          direct_source: "https://def2.pcloud.com/cBZlAfb877ZFeLrVM7ZZZhJlm0kZ2ZZsVLZkZsXfHJVZQ4Z7RZS8ZgRZCpZ3JZgQZ6zZdRZiFZU8Z14Zj4Za8ZhHYM5ZzWnwGtuUXBkXID3pL8bEUYu99f2y/Pluribus_S01E02_Pirate%20Lady.mp4"
+          "direct_source": "https://def2.pcloud.com/cBZlAfb877ZFeLrVM7ZZZhJlm0kZ2ZZsVLZkZsXfHJVZQ4Z7RZS8ZgRZCpZ3JZgQZ6zZdRZiFZU8Z14Zj4Za8ZhHYM5ZzWnwGtuUXBkXID3pL8bEUYu99f2y/Pluribus_S01E02_Pirate%20Lady.mp4"
         }
       ]
     }
   },
-  2: {
-    seasons: [
+  "2": {
+    "seasons": [
       {
-        season_number: 1,
-        name: "Temporada 1",
-        episode_count: 2,
-        cover: "https://image.tmdb.org/t/p/w500/serie2season1.jpg",
-        cover_big: "https://image.tmdb.org/t/p/original/serie2season1.jpg",
-        air_date: "2025-05-15"
+        "season_number": 1,
+        "name": "Temporada 1",
+        "episode_count": 2,
+        "cover": "https://image.tmdb.org/t/p/w500/serie2season1.jpg",
+        "cover_big": "https://image.tmdb.org/t/p/original/serie2season1.jpg",
+        "air_date": "2025-05-15"
       }
     ],
-    episodes: {
-      1: [
+    "episodes": {
+      "1": [
         {
-          id: "301",
-          episode_num: 1,
-          title: "Piloto",
-          container_extension: "mp4",
-          info: {
-            name: "Piloto",
-            season: 1,
-            episode_num: 1,
-            air_date: "2022-05-15",
-            plot: "El episodio piloto",
-            duration_secs: "1800",
-            duration: "30:00",
-            rating: "7.5",
-            cover_big: "https://image.tmdb.org/t/p/original/serie2ep1.jpg"
+          "id": "301",
+          "episode_num": 1,
+          "title": "Piloto",
+          "container_extension": "mp4",
+          "info": {
+            "name": "Piloto",
+            "season": 1,
+            "episode_num": 1,
+            "air_date": "2022-05-15",
+            "plot": "El episodio piloto",
+            "duration_secs": "1800",
+            "duration": "30:00",
+            "rating": "7.5",
+            "cover_big": "https://image.tmdb.org/t/p/original/serie2ep1.jpg"
           },
-          direct_source: "https://archive.org/download/tu-id/serie2_s01e01.mp4"
+          "direct_source": "https://archive.org/download/tu-id/serie2_s01e01.mp4"
         },
         {
-          id: "302",
-          episode_num: 2,
-          title: "Segundo Episodio",
-          container_extension: "mp4",
-          info: {
-            name: "Segundo Episodio",
-            season: 1,
-            episode_num: 2,
-            air_date: "2022-05-22",
-            plot: "La historia continúa",
-            duration_secs: "1800",
-            duration: "30:00",
-            rating: "8.0",
-            cover_big: "https://image.tmdb.org/t/p/original/serie2ep2.jpg"
+          "id": "302",
+          "episode_num": 2,
+          "title": "Segundo Episodio",
+          "container_extension": "mp4",
+          "info": {
+            "name": "Segundo Episodio",
+            "season": 1,
+            "episode_num": 2,
+            "air_date": "2022-05-22",
+            "plot": "La historia continúa",
+            "duration_secs": "1800",
+            "duration": "30:00",
+            "rating": "8.0",
+            "cover_big": "https://image.tmdb.org/t/p/original/serie2ep2.jpg"
           },
-          direct_source: "https://archive.org/download/tu-id/serie2_s01e02.mp4"
+          "direct_source": "https://archive.org/download/tu-id/serie2_s01e02.mp4"
         }
       ]
     }
