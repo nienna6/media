@@ -1,5 +1,26 @@
 #EXTM3U x-tvg-url=""
 
-#EXTINF:-1 tvg-id="teleestrella" tvg-name="TeleEstrella" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png" tvg-type="live" group-title="Bolivia",TeleEstrella
+#EXTINF:-1 tvg-id="teleestrella" tvg-name="TeleEstrella" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/2/22/Estrella_TV_Logo_2020.png" group-title="Bolivia",TeleEstrella
 https://59d39900ebfb8.streamlock.net/teleestrella/teleestrella/chunklist.m3u8
+
+#EXTINF:-1 tvg-id="canalprueba" tvg-name="Canal de Prueba (Demo)" tvg-logo="https://via.placeholder.com/150" group-title="TV en Vivo (General)",Canal de Prueba (Demo)
+https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8
+
+#EXTINF:-1 tvg-id="1773822975155" tvg-name="Atraccion Peculiar (1988)" tvg-logo="https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg" group-title="Películas (General)",Atraccion Peculiar (1988)
+https://archive.org/download/atraccion-peculiar-1988/Atraccion%20peculiar%20%281988%29.mp4
+
+#EXTINF:-1 tvg-id="1" tvg-name="Shrek (2001)" tvg-logo="https://static.wikia.nocookie.net/doblaje/images/6/69/Shrekban.png/revision/latest?cb=20200731225428&path-prefix=es" group-title="Comedia",Shrek (2001)
+https://cdnvideo.davidmonrroy7.workers.dev/video/https%3A%2F%2Farchive.org%2Fdownload%2Fdercro-2040%2FDERCRO2040.mkv
+
+#EXTINF:-1 tvg-id="ep_101" tvg-name="Pluribus S1E1 Episodio 1 - Somos nosotros" tvg-logo="https://i.imgur.com/tVdzIkh.jpeg" group-title="Drama",Pluribus S1E1 Episodio 1 - Somos nosotros
+https://def4.pcloud.com/cBZgWsb877ZpWSrVM7ZZZk5lm0kZ2ZZsVLZkZLdx9iVZo8ZiYZ8QZF7Z4mZ9QZSLZNQZHLZe8ZT4Z04ZlRZbYZR6bM5ZvKBGnb50zlXyCnvQAhBS4Rmhqws7/Pluribus_S01E01_We%20Is%20Us.mp4
+
+#EXTINF:-1 tvg-id="ep_102" tvg-name="Pluribus S1E2 Episodio 2 - Chica Pirata" tvg-logo="https://i.imgur.com/tVdzIkh.jpeg" group-title="Drama",Pluribus S1E2 Episodio 2 - Chica Pirata
+https://def2.pcloud.com/cBZlAfb877ZFeLrVM7ZZZhJlm0kZ2ZZsVLZkZsXfHJVZQ4Z7RZS8ZgRZCpZ3JZgQZ6zZdRZiFZU8Z14Zj4Za8ZhHYM5ZzWnwGtuUXBkXID3pL8bEUYu99f2y/Pluribus_S01E02_Pirate%20Lady.mp4
+
+#EXTINF:-1 tvg-id="ep_301" tvg-name="Chespirito: Sin Querer Queriendo S1E1 Piloto" tvg-logo="https://image.tmdb.org/t/p/w500/serie2.jpg" group-title="Series (General)",Chespirito: Sin Querer Queriendo S1E1 Piloto
+https://archive.org/download/tu-id/serie2_s01e01.mp4
+
+#EXTINF:-1 tvg-id="ep_302" tvg-name="Chespirito: Sin Querer Queriendo S1E2 Segundo Episodio" tvg-logo="https://image.tmdb.org/t/p/w500/serie2.jpg" group-title="Series (General)",Chespirito: Sin Querer Queriendo S1E2 Segundo Episodio
+https://archive.org/download/tu-id/serie2_s01e02.mp4
 
