@@ -42,7 +42,7 @@ const movies = [
     "name": "Atraccion Peculiar (1988)",
     "title": "Atraccion Peculiar (1988)",
     "stream_type": "movie",
-    "stream_icon": "https://dn710105.ca.archive.org/0/items/atraccion-peculiar-1988/__ia_thumb.jpg",
+    "stream_icon": "https://res.cloudinary.com/dzndglyjr/image/upload/v1760206690/cinenacional/posters/167/poster.jpg",
     "rating": "5.0",
     "rating_5based": 2.5,
     "added": "1773822975",
